@@ -1,0 +1,492 @@
+/*==================================================
+			Bootstrap 4.5 Media Queries        
+==================================================*/
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .container {
+    max-width: 1700px;
+  }
+}
+
+@media (min-width: 1301px) and (max-width: 1440px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Large Devices (Desktops & Laptops) */
+
+@media (min-width: 1201px) and (max-width: 1300px) {
+}
+
+/* Medium Devices (Landscape Tablets & Medium Desktops) */
+
+@media (min-width: 992px) and (max-width: 1200px) {
+}
+
+/* Large Devices (Desktops & Laptops) */
+
+@media (min-width: 1200px) and (max-width: 1299px) {
+}
+
+/* Medium Devices (Landscape Tablets & Medium Desktops) */
+
+@media (max-width: 1200px) {
+  #Note-Detail #Note-Details-Right .title-value .rate {
+    margin-left: -60px;
+  }
+}
+
+/* Small Devices (Portrait Tablets & Small Desktops) */
+
+@media (max-width: 992px) {
+  .dropdown-profile .fa {
+    font-size: xx-large;
+  }
+  a.dropbtn-profile.nav-link.active {
+    display: flex;
+  }
+  a.dropbtn-profile.nav-link span {
+    display: none;
+  }
+  a.dropbtn-profile.nav-link.active span {
+    display: inline-block;
+    margin-left: auto;
+  }
+
+  .dropdown-profile:hover .dropdown-content-profile {
+    display: contents;
+  }
+  .testimonial .col-md-1.col-sm-1 {
+    float: 0 0 10%;
+    max-width: 10%;
+  }
+  .testimonial .col-md-11.col-sm-11 {
+    float: 0 0 90%;
+    max-width: 90%;
+  }
+  #search-enter-progress {
+    width: 200px;
+  }
+  .client-profile form .profile-picture-input span img {
+    margin-right: 200px;
+  }
+
+  #dash-4 {
+    margin-left: 0px;
+  }
+
+  #dash-3 {
+    margin-right: 0px;
+  }
+  .banner-img-text {
+    height: 200px;
+  }
+
+  /* User Profile page */
+
+  .banner-img-text h3 {
+    font-size: 40px;
+  }
+
+  .profile-detail-box {
+    margin-top: 35px;
+  }
+
+  .btn-general.btn-submit-form {
+    margin-bottom: 35px;
+  }
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .rate {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  #Note-Details-page #Note-Details-Left {
+    margin-bottom: 30px;
+  }
+  #Note-Details-page .col-md-7 {
+    margin-top: 30px;
+  }
+  #dash-4 {
+    margin-left: 10px;
+  }
+  #dash-3 {
+    margin-right: 10px;
+  }
+  #box-3 {
+    border-left: 1px solid #d1d1d1;
+    margin-left: 10px;
+  }
+  #box-2 {
+    margin-left: 10px;
+  }
+  .flex-container-2 > div {
+    margin-bottom: 20px;
+  }
+  .flex-container-2 {
+    display: inline;
+  }
+  #box-2 {
+    /* margin-left: -5px; */
+    border-right: 1px solid #d1d1d1;
+    /* margin: 10px 0px; */
+  }
+  /* General form (login, signup, forgot password, change password) */
+
+  .btn-general {
+    width: 375px;
+    height: 40px;
+    font-size: 15px;
+  }
+
+  #form-size {
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  #form-size h3 {
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+
+  .main-general-form form p {
+    margin-bottom: 20px;
+  }
+
+  #form-size.main-general-form form p {
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 15px;
+  }
+
+  .main-general-form form label {
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  .main-general-form form input {
+    margin-top: 5px;
+    font-size: 8px;
+    line-height: 15px;
+  }
+
+  .main-general-form form .form-group {
+    margin-bottom: 15px;
+  }
+
+  .main-general-form form .form-control {
+    width: 375px;
+    height: 40px;
+    font-size: 15px;
+  }
+
+  .main-general-form form .form-group a {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .main-general-form form .form-group img {
+    margin-top: -28px;
+  }
+
+  .main-general-form form small {
+    font-size: 12px;
+  }
+
+  .main-general-form form .input-group-prepend input {
+    width: 20px;
+    height: 20px;
+  }
+
+  .main-general-form form .input-group-text {
+    margin-top: 10px;
+  }
+
+  #form-size p {
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  /* general (profile pages and forms)*/
+
+  .banner-img-text {
+    height: 175px;
+  }
+
+  /* User Profile page */
+
+  .banner-img-text h3 {
+    font-size: 40px;
+  }
+
+  .profile-detail-box {
+    margin-top: 35px;
+  }
+
+  .footer-wrapper #text-area {
+    margin: 0;
+    padding-top: 0px;
+    text-align-last: center;
+  }
+
+  .footer-wrapper #icon-area {
+    margin: 0;
+    padding-top: 0px;
+    text-align-last: center;
+  }
+
+  .customer-name-1 {
+    text-align: center;
+    /* width: max-content; */
+  }
+  #left-work {
+    margin-bottom: 30px;
+  }
+  .col-md-4 {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .row-2 {
+    justify-content: center;
+  }
+
+  .testimonial .col-md-1.col-sm-1 {
+    float: 0 0 15%;
+    max-width: 15%;
+  }
+  .testimonial .col-md-11.col-sm-11 {
+    float: 0 0 85%;
+    max-width: 85%;
+  }
+
+  /* .client-profile form .profile-picture-input span img {
+    margin-right: 0px;
+  } */
+}
+
+/* Extra Small Devices (Portrait Phones & Smaller Devices) */
+
+@media (max-width: 480px) {
+  /* General */
+
+  .btn-general {
+    width: 325px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  #form-size {
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  #form-size h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+
+  .main-general-form form p {
+    margin-bottom: 15px;
+  }
+
+  #form-size.main-general-form form p {
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 12px;
+  }
+
+  .main-general-form form label {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .main-general-form form input {
+    margin-top: 3px;
+    font-size: 8px;
+    line-height: 10px;
+  }
+
+  .main-general-form form .form-group {
+    margin-bottom: 10px;
+  }
+
+  .main-general-form form .form-control {
+    width: 325px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .main-general-form form .form-group a {
+    font-size: 12px;
+    line-height: 25px;
+  }
+
+  .main-general-form form .form-group img {
+    margin-top: -22px;
+  }
+
+  .main-general-form form small {
+    font-size: 10px;
+  }
+
+  .main-general-form form .input-group-prepend input {
+    width: 15px;
+    height: 15px;
+  }
+
+  .main-general-form form .input-group-text {
+    margin-top: 5px;
+  }
+
+  #form-size p {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  /* general (profile pages and forms)*/
+
+  .banner-img-text {
+    height: 170px;
+  }
+
+  /* User Profile page */
+
+  .banner-img-text h3 {
+    font-size: 35px;
+  }
+
+  .last-row-small {
+    margin-bottom: 15px;
+  }
+
+  .phone-number-input {
+    margin-top: 10px;
+  }
+
+  .row-2 {
+    justify-content: center;
+  }
+
+  .customer-name-1 {
+    text-align: center;
+  }
+}
+
+/* Extra Small Devices (Portrait Phones & Smaller Devices) */
+
+@media (max-width: 320px) {
+  /* General */
+
+  .btn-general {
+    width: 270px;
+    height: 25px;
+    font-size: 11px;
+  }
+
+  #form-size {
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  #form-size h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .main-general-form form p {
+    margin-bottom: 12px;
+  }
+
+  #form-size.main-general-form form p {
+    font-size: 11px;
+  }
+
+  .main-general-form form label {
+    font-size: 11px;
+    line-height: 11px;
+  }
+
+  .main-general-form form input {
+    font-size: 11px;
+    line-height: 10px;
+  }
+
+  .main-general-form form .form-group {
+    margin-bottom: 10px;
+  }
+
+  .main-general-form form .form-control {
+    width: 270px;
+    height: 25px;
+    font-size: 11px;
+  }
+
+  .main-general-form form .form-group a {
+    font-size: 11px;
+    line-height: 27px;
+  }
+
+  .main-general-form form .form-group img {
+    margin-top: -20px;
+  }
+
+  .main-general-form form small {
+    font-size: 10px;
+  }
+
+  .main-general-form form .input-group-prepend input {
+    width: 14px;
+    height: 14px;
+  }
+
+  .main-general-form form .input-group-text {
+    margin-top: 0px;
+  }
+
+  #form-size p {
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 11px;
+  }
+
+  /* general (profile pages and forms)*/
+
+  .banner-img-text {
+    height: 170px;
+  }
+
+  /* User Profile page */
+
+  .banner-img-text h3 {
+    font-size: 25px;
+  }
+
+  .client-profile form .profile-picture-input span img {
+    margin-top: -45px;
+    margin-right: 100px;
+  }
+
+  .profile-detail-box h3 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .row-2 {
+    justify-content: center;
+  }
+
+  #search-enter-progress {
+    width: 150px;
+  }
+}
