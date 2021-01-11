@@ -1,7 +1,6 @@
 /*==================================================
 			Bootstrap 4.5 Media Queries        
 ==================================================*/
-
 @media (min-width: 1441px) and (max-width: 1920px) {
   .container {
     max-width: 1700px;
@@ -15,22 +14,18 @@
 }
 
 /* Large Devices (Desktops & Laptops) */
-
 @media (min-width: 1201px) and (max-width: 1300px) {
 }
 
 /* Medium Devices (Landscape Tablets & Medium Desktops) */
-
 @media (min-width: 992px) and (max-width: 1200px) {
 }
 
 /* Large Devices (Desktops & Laptops) */
-
 @media (min-width: 1200px) and (max-width: 1299px) {
 }
 
 /* Medium Devices (Landscape Tablets & Medium Desktops) */
-
 @media (max-width: 1200px) {
   #Note-Detail #Note-Details-Right .title-value .rate {
     margin-left: -60px;
@@ -38,17 +33,19 @@
 }
 
 /* Small Devices (Portrait Tablets & Small Desktops) */
-
 @media (max-width: 992px) {
   .dropdown-profile .fa {
     font-size: xx-large;
   }
+
   a.dropbtn-profile.nav-link.active {
     display: flex;
   }
+
   a.dropbtn-profile.nav-link span {
     display: none;
   }
+
   a.dropbtn-profile.nav-link.active span {
     display: inline-block;
     margin-left: auto;
@@ -57,17 +54,21 @@
   .dropdown-profile:hover .dropdown-content-profile {
     display: contents;
   }
+
   .testimonial .col-md-1.col-sm-1 {
     float: 0 0 10%;
     max-width: 10%;
   }
+
   .testimonial .col-md-11.col-sm-11 {
     float: 0 0 90%;
     max-width: 90%;
   }
+
   #search-enter-progress {
     width: 200px;
   }
+
   .client-profile form .profile-picture-input span img {
     margin-right: 200px;
   }
@@ -79,12 +80,12 @@
   #dash-3 {
     margin-right: 0px;
   }
+
   .banner-img-text {
     height: 200px;
   }
 
   /* User Profile page */
-
   .banner-img-text h3 {
     font-size: 40px;
   }
@@ -96,6 +97,7 @@
   .btn-general.btn-submit-form {
     margin-bottom: 35px;
   }
+
   .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -111,35 +113,43 @@
   #Note-Details-page #Note-Details-Left {
     margin-bottom: 30px;
   }
+
   #Note-Details-page .col-md-7 {
     margin-top: 30px;
   }
+
   #dash-4 {
     margin-left: 10px;
   }
+
   #dash-3 {
     margin-right: 10px;
   }
+
   #box-3 {
     border-left: 1px solid #d1d1d1;
     margin-left: 10px;
   }
+
   #box-2 {
     margin-left: 10px;
   }
+
   .flex-container-2 > div {
     margin-bottom: 20px;
   }
+
   .flex-container-2 {
     display: inline;
   }
+
   #box-2 {
     /* margin-left: -5px; */
     border-right: 1px solid #d1d1d1;
     /* margin: 10px 0px; */
   }
-  /* General form (login, signup, forgot password, change password) */
 
+  /* General form (login, signup, forgot password, change password) */
   .btn-general {
     width: 375px;
     height: 40px;
@@ -216,13 +226,11 @@
   }
 
   /* general (profile pages and forms)*/
-
   .banner-img-text {
     height: 175px;
   }
 
   /* User Profile page */
-
   .banner-img-text h3 {
     font-size: 40px;
   }
@@ -247,9 +255,11 @@
     text-align: center;
     /* width: max-content; */
   }
+
   #left-work {
     margin-bottom: 30px;
   }
+
   .col-md-4 {
     margin-bottom: 30px;
   }
@@ -258,12 +268,14 @@
 @media (max-width: 576px) {
   .row-2 {
     justify-content: center;
+    margin-left: 0px;
   }
 
   .testimonial .col-md-1.col-sm-1 {
     float: 0 0 15%;
     max-width: 15%;
   }
+
   .testimonial .col-md-11.col-sm-11 {
     float: 0 0 85%;
     max-width: 85%;
@@ -275,10 +287,8 @@
 }
 
 /* Extra Small Devices (Portrait Phones & Smaller Devices) */
-
 @media (max-width: 480px) {
   /* General */
-
   .btn-general {
     width: 325px;
     height: 30px;
@@ -355,13 +365,11 @@
   }
 
   /* general (profile pages and forms)*/
-
   .banner-img-text {
     height: 170px;
   }
 
   /* User Profile page */
-
   .banner-img-text h3 {
     font-size: 35px;
   }
@@ -384,10 +392,8 @@
 }
 
 /* Extra Small Devices (Portrait Phones & Smaller Devices) */
-
 @media (max-width: 320px) {
   /* General */
-
   .btn-general {
     width: 270px;
     height: 25px;
@@ -461,13 +467,11 @@
   }
 
   /* general (profile pages and forms)*/
-
   .banner-img-text {
     height: 170px;
   }
 
   /* User Profile page */
-
   .banner-img-text h3 {
     font-size: 25px;
   }
