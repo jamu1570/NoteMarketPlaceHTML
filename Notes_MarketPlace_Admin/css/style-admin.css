@@ -1,991 +1,1095 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 body {
-  font-family: "Open sans";
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+    font-family: "Open sans";
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #page-container {
-  position: relative;
-  min-height: 100vh;
+    position: relative;
+    min-height: 100vh;
 }
 
 #content-wrap {
-  padding-bottom: 80px;
+    padding-bottom: 80px;
 }
 
 /*===============================================
                     Header -Admin
 ===============================================*/
-
 /* mobile menu responsive - start */
 a.dropbtn-navbar.nav-link span {
-  display: none;
+    display: none;
 }
+
 a.dropbtn-profile.nav-link span {
-  display: none;
+    display: none;
 }
+
 /* mobile menu responsive - end */
 .navbar-transparent .bg-light {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 .navbar-transparent .navbar-light .navbar-nav .nav-link {
-  font-family: "Open sans";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #fff;
-  padding: 15px 0px 0px 0px;
+    font-family: "Open sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #fff;
+    padding: 15px 0px 0px 0px;
 }
 
 .navbar-transparent .navbar-light .home-nav.login-note-btn button {
-  background: #fff;
-  color: #6055a5;
-  font-weight: 600;
+    /* background: #fff; */
+    color: #6055a5;
+    font-weight: 600;
 }
 
 .navbar-transparent .navbar-light .navbar-nav.home-nav .nav-link {
-  padding: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 .navbar-light .navbar-nav .nav-link img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin-top: -10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
 }
 
 .navbar-expand-lg .navbar-nav {
-  padding-right: 10px;
+    padding-right: 10px;
 }
 
 .navbar-transparent .bg-light {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
+
 img#nav-img {
-  border-radius: 50%;
+    border-radius: 50%;
 }
+
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
+
 .bg-light {
-  z-index: 5000;
-  box-shadow: 0px 0px 30px 0px rgb(0, 0, 0, 0.08);
-  background: #fff;
+    z-index: 5000;
+    box-shadow: 0px 0px 30px 0px rgb(0, 0, 0, 0.08);
+    background: #fff;
 }
 
 li.nav-item {
-  font-family: "Open sans";
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 20px;
-  color: #333333;
-  padding: 0px 15px;
+    font-family: "Open sans";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #333333;
+    padding: 0px 15px;
 }
+
 .navbar-light .navbar-nav .nav-link {
-  font-family: "Open sans";
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 20px;
-  color: #333333;
-  padding: 15px 0px;
+    font-family: "Open sans";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #333333;
+    padding: 15px 0px;
 }
+
 .navbar-light .navbar-nav .nav-link:hover {
-  padding-bottom: 5px;
-  color: #6255a5;
-  border-bottom: 3px solid #6255a5;
+    padding-bottom: 5px;
+    color: #6255a5;
+    border-bottom: 3px solid #6255a5;
 }
 
 .navbar-light .navbar-nav .nav-link.active {
-  padding-bottom: 5px;
-  color: #6255a5;
-  border-bottom: 3px solid #6255a5;
+    padding-bottom: 5px;
+    color: #6255a5;
+    border-bottom: 3px solid #6255a5;
 }
+
 .bg-light {
-  background-color: #fff !important;
+    background-color: #fff !important;
 }
 
 .login-note-btn button {
-  border-radius: 3px;
-  font-family: "Open sans";
-  font-size: 16px;
-  line-height: 22px;
-  width: 100px;
-  height: 30px;
-  background: #6255a5;
-  color: #fff;
-  border: none;
+    border-radius: 3px;
+    font-family: "Open sans";
+    font-size: 16px;
+    line-height: 22px;
+    width: 100px;
+    height: 30px;
+    background: #6255a5;
+    color: #fff;
+    border: none;
 }
+
 .login-note-btn button a {
-  color: #fff;
+    color: #fff;
 }
 
 .login-note-btn button a:hover {
-  color: #fff;
+    color: #fff;
 }
 
 #logout-btn {
-  margin-top: -10px;
+    margin-top: -10px;
 }
+
 /*==================================================
             Navbar - Submenu of Profile
 ==================================================*/
 .dropbtn-profile {
-  background-color: #fff;
-  color: #fff;
-  font-size: 16px;
-  border: none;
+    background-color: #fff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
 }
 
 .dropdown-profile {
-  position: relative;
-  display: inline-block;
-  width: 100%;
+    position: relative;
+    display: inline-block;
+    width: 100%;
 }
 
 .dropdown-content-profile {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  width: 200px;
-  left: -200%;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 200px;
+    left: -200%;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .dropdown-content-profile a {
-  font-family: "Open sans";
-  font-weight: 500;
-  font-size: 16px;
-  color: #333333;
-  padding: 10px 25px;
-  text-decoration: none;
-  display: block;
+    font-family: "Open sans";
+    font-weight: 500;
+    font-size: 16px;
+    color: #333333;
+    padding: 10px 25px;
+    text-decoration: none;
+    display: block;
 }
 
 .dropdown-content-profile a:last-child {
-  color: #6255a5;
-  text-transform: uppercase;
-  font-weight: 600;
+    color: #6255a5;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .dropdown-content-profile a:hover {
-  background: #6255a5;
-  color: #fff;
+    background: #6255a5;
+    color: #fff;
 }
 
 .dropdown-content-profile a:last-child:hover {
-  background: #6255a5;
-  color: #fff;
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    background: #6255a5;
+    color: #fff;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-profile:hover .dropdown-content-profile {
-  display: block;
-  /* margin-top: 5px; */
+    display: block;
+    /* margin-top: 5px; */
 }
 
 .dropdown-profile:hover .dropbtn-profile {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 /*==================================================
             Submenu of navbar
 ==================================================*/
 .dropbtn-navbar {
-  background-color: #fff;
-  color: #fff;
-  font-size: 16px;
-  border: none;
+    background-color: #fff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
 }
 
 .dropdown-navbar {
-  position: relative;
-  display: inline-block;
-  width: 100%;
+    position: relative;
+    display: inline-block;
+    width: 100%;
 }
 
 .dropdown-content-navbar {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  width: 200px;
-  left: -200%;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 200px;
+    left: -200%;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .dropdown-content-navbar a {
-  font-family: "Open sans";
-  font-weight: 500;
-  font-size: 14px;
-  color: #333333;
-  padding: 10px 25px;
-  text-decoration: none;
-  display: block;
+    font-family: "Open sans";
+    font-weight: 500;
+    font-size: 14px;
+    color: #333333;
+    padding: 10px 25px;
+    text-decoration: none;
+    display: block;
 }
 
 .dropdown-content-navbar a:hover {
-  background: #6255a5;
-  color: #fff;
+    background: #6255a5;
+    color: #fff;
 }
 
 .dropdown-navbar:hover .dropdown-content-navbar {
-  display: block;
+    display: block;
 }
 
 .dropdown-navbar:hover .dropbtn-navbar {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 .dropdown-navbar.active {
-  border-bottom: 3px solid #6255a5;
+    border-bottom: 3px solid #6255a5;
 }
 
 /*==================================================
                     Dashboard -Admin
 ==================================================*/
-
 .flex-container-admin {
-  display: flex;
-  align-items: stretch;
+    display: flex;
+    align-items: stretch;
 }
 
 .flex-container-admin > div {
-  border: 1px solid #d1d1d1;
+    border: 1px solid #d1d1d1;
+    margin: 0px 10px 0px 10px;
+    text-align: center;
+    border-radius: 2px;
+    padding: 25px 40px;
+}
 
-  margin: 0px 10px 0px 10px;
-  text-align: center;
-  border-radius: 2px;
-  padding: 25px 40px;
-}
 .flex-container-admin > div > div > a > h6 {
-  font-family: "Open sans";
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 34px;
-  color: #6255a5;
+    font-family: "Open sans";
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 34px;
+    color: #6255a5;
 }
+
 .flex-container-admin > div > div > a > span {
-  font-family: "Open sans";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-  color: #333333;
+    font-family: "Open sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #333333;
 }
 
 .progress-note-btn .col-md-3 {
-  padding-left: 0px;
+    padding-left: 0px;
 }
 
 #dash-admin-3 {
-  margin-right: 5px;
+    margin-right: 5px;
 }
+
 #dash-admin-1 {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 .User-Dashboard {
-  padding-top: 66px;
+    padding-top: 66px;
 }
+
 .dashboard-1 {
-  padding-top: 60px;
+    padding-top: 60px;
 }
 
 .User-Dashboard h3 {
-  font-family: "Open sans";
-  font-size: 34px;
-  font-weight: 600;
-  line-height: 38px;
-  color: #6255a5;
+    font-family: "Open sans";
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #6255a5;
 }
 
 .add-note-btn button {
-  border-radius: 3px;
-  font-family: "Open sans";
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 600;
-  width: 150px;
-  height: 40px;
-  background: #6255a5;
-  color: #fff;
-  border: none;
+    border-radius: 3px;
+    font-family: "Open sans";
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    width: 150px;
+    height: 40px;
+    background: #6255a5;
+    color: #fff;
+    border: none;
 }
+
 .dashboard-detail-2 {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 .progress-notes {
-  margin-top: 126px;
-  margin-bottom: 20px;
+    margin-top: 126px;
+    margin-bottom: 20px;
 }
+
 .progress-notes-2 {
-  margin-top: 60px;
-  margin-bottom: 20px;
+    margin-top: 60px;
+    margin-bottom: 20px;
 }
+
 #members-pad {
-  margin-top: 60px !important;
+    margin-top: 60px !important;
 }
+
 .progress-dashboard h3 {
-  font-family: "Open sans";
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 28px;
-  color: #6255a5;
+    font-family: "Open sans";
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #6255a5;
 }
+
 .progress-note-btn button {
-  border-radius: 3px;
-  font-family: "Open sans";
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 700;
-  width: 117px;
-  height: 40px;
-  background: #6255a5;
-  color: #fff;
-  border: none;
+    border-radius: 3px;
+    font-family: "Open sans";
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    width: 117px;
+    height: 40px;
+    background: #6255a5;
+    color: #fff;
+    border: none;
 }
+
 #search-enter-progress {
-  background-image: url("../images/Search-Notes/searchicon.png");
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 322px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #d1d1d1;
-  border-radius: 3px;
-  height: 40px;
-  font-family: "Open sans";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #8a8a8a;
+    background-image: url("../images/Search-Notes/searchicon.png");
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 322px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    height: 40px;
+    font-family: "Open sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #8a8a8a;
 }
 
 .progress-table {
-  border: 1px solid #d1d1d1;
-  border-radius: 3px;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
 }
+
 .table {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .table thead th {
-  font-family: "Open sans";
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 20px;
-  color: #333333;
-  text-transform: uppercase;
+    font-family: "Open sans";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #333333;
+    text-transform: uppercase;
 }
+
 .table td {
-  font-family: "Open sans";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #333333;
+    font-family: "Open sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
 }
 
 .action-1 {
-  margin-right: 15px;
+    margin-right: 15px;
 }
+
 .table td,
 .table th {
-  padding: 20px 15px;
+    padding: 20px 15px;
 }
 
 .table tbody tr:hover {
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 /* Admin -table dropdown */
-
 .dropbtn {
-  background-color: #fff;
-  color: #fff;
-  font-size: 16px;
-  border: none;
+    background-color: #fff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 /* submenu for my down load page */
-
 .admin-table .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  margin-left: -145px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    margin-left: -145px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .dropdown-content a {
-  font-family: "Open sans";
-  font-weight: 600;
-  font-size: 14px;
-  color: #333333;
-  padding: 10px 15px;
-  text-decoration: none;
-  display: block;
+    font-family: "Open sans";
+    font-weight: 600;
+    font-size: 14px;
+    color: #333333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
 }
 
 .dropdown-content a:hover {
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 /*==================================================
                 Pagination -Admin
 ==================================================*/
-
 .pagination-section {
-  height: 20px;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  /* background: #6255a5;
+    height: 20px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    /* background: #6255a5;
   border-radius: 50%; */
 }
+
 .pagination-number {
-  display: inline-block;
+    display: inline-block;
 }
+
 .pagination-notes {
-  text-align: center;
+    text-align: center;
 }
+
 .pagination-number a {
-  /* color: #fff; */
-  padding: 5px 12px;
-  text-decoration: none;
-  font-family: "Open sans";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #333333;
+    /* color: #fff; */
+    padding: 5px 12px;
+    text-decoration: none;
+    font-family: "Open sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
 }
+
 .pagination-number a.active {
-  background-color: #6255a5;
-  color: #fff;
-  border-radius: 50%;
+    background-color: #6255a5;
+    color: #fff;
+    border-radius: 50%;
 }
 
 /*==================================================
                     My Profile page
 ==================================================*/
 .admin-profile {
-  padding-top: 126px;
+    padding-top: 126px;
 }
 
 .admin-profile-details .form-group label {
-  font-size: 15px;
-  margin-bottom: 5px;
-  font-weight: 400;
-  line-height: 25px;
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    line-height: 25px;
 }
 
 .admin-heading h3 {
-  font-family: "Open sans";
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 38px;
-  color: #6255a5;
+    font-family: "Open sans";
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #6255a5;
 }
+
 .admin-heading {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .btn-general.btn-submit-form {
-  width: 125px;
-  height: 40px;
-  border: none;
-  font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 60px;
+    width: 125px;
+    height: 40px;
+    border: none;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 60px;
 }
+
 .btn-general.btn-submit-form a {
-  color: #fff;
+    color: #fff;
 }
 
 .btn-general {
-  margin: 0;
-  padding: 0;
-  background: #6255a5;
-
-  border-radius: 3px;
-  color: #fff;
-  font-family: "Open sans";
-  font-size: 18px;
-  line-height: 22px;
-  text-transform: uppercase;
-  border: none;
+    margin: 0;
+    padding: 0;
+    background: #6255a5;
+    border-radius: 3px;
+    color: #fff;
+    font-family: "Open sans";
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    border: none;
 }
 
 /* upload file */
 .custom-file-input:lang(en) ~ .custom-file-label::after {
-  content: "";
+    content: "";
 }
+
 .custom-file-label::after {
-  content: "";
-  padding: 0px;
+    content: "";
+    padding: 0px;
 }
 
 .custom-file-label {
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .custom-file {
-  height: 100px;
+    height: 100px;
 }
 
 .upload-2 {
-  transform: translateX(25%);
+    transform: translateX(25%);
 }
 
 .action-1 {
-  margin-right: 15px;
+    margin-right: 15px;
 }
 
 .manage-admin .progress-notes-2 {
-  margin-top: 30px;
-  margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 #add-category {
-  width: 200px;
+    width: 200px;
 }
+
 #add-type {
-  width: 130px;
+    width: 130px;
 }
+
 .table-data-color {
-  color: #6255a5;
+    color: #6255a5;
 }
 
 /*==================================================
                     Members -Admin
 ==================================================*/
 .members {
-  padding-top: 66px;
+    padding-top: 66px;
 }
+
 #members-label {
-  font-family: "Open sans";
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 36px;
-  color: #6255a5;
+    font-family: "Open sans";
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 36px;
+    color: #6255a5;
 }
+
 .member-details h3 {
-  font-family: "Open sans";
-  font-size: 34px;
-  font-weight: 600;
-  line-height: 36px;
-  color: #6255a5;
-  margin-bottom: 20px;
+    font-family: "Open sans";
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 36px;
+    color: #6255a5;
+    margin-bottom: 20px;
 }
+
 .member-details img {
-  width: 100%;
+    width: 100%;
 }
+
 #v-line {
-  border-right: 2px solid #f4f4f4;
+    border-right: 2px solid #f4f4f4;
 }
+
 #h-line {
-  padding-bottom: 40px;
-  border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 40px;
+    border-bottom: 2px solid #f4f4f4;
 }
+
 .m-title {
-  font-size: 15px;
-  font-family: "Open sans";
-  line-height: 28px;
-  color: #333333;
+    font-size: 15px;
+    font-family: "Open sans";
+    line-height: 28px;
+    color: #333333;
 }
+
 .m-value {
-  font-size: 15px;
-  font-family: "Open sans";
-  line-height: 28px;
-  color: #6255a5;
-  font-weight: 600;
+    font-size: 15px;
+    font-family: "Open sans";
+    line-height: 28px;
+    color: #6255a5;
+    font-weight: 600;
 }
+
 .m-title > p {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
+
 .m-value > p {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
+
 /*==================================================
                     Note Under Review -Admin
 ==================================================*/
 .note-under-review .progress-notes-2 {
-  margin-top: 20px;
-  margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
 .note-under-review .form-control {
-  width: 174px;
+    width: 174px;
 }
+
 .note-under-review .form-group {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
+
 #note-name {
-  font-family: "Open sans";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #333333;
-  margin-bottom: 10px;
+    font-family: "Open sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+    margin-bottom: 10px;
 }
+
 #buyer-name {
-  font-family: "Open sans";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #333333;
-  margin-bottom: 10px;
+    font-family: "Open sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+    margin-bottom: 10px;
 }
+
 #seller-name {
-  font-family: "Open sans";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #333333;
-  margin-bottom: 10px;
+    font-family: "Open sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+    margin-bottom: 10px;
 }
+
 .action-button {
-  display: flex;
+    display: flex;
 }
+
 .action-button .btn {
-  width: 100px;
+    width: 100px;
 }
+
 .reject-button {
-  margin: 0px 10px;
+    margin: 0px 10px;
 }
+
 .inreview-button {
-  background-color: #cccccc;
-  border: none;
+    background-color: #cccccc;
+    border: none;
 }
+
 .eye-image {
-  padding-left: 0px !important;
+    padding-left: 0px !important;
 }
+
 /*==================================================
                     Download Notes -Admin
 ==================================================*/
-
 .download-notes .progress-notes-2 {
-  margin-top: 20px;
-  margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .download-notes .form-group {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .download-notes .col-md-6.col-sm-12.col-xs-12.search-label.text-right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 #nsb-menu {
-  display: flex;
-  align-items: flex-end;
+    display: flex;
+    align-items: flex-end;
 }
+
 /*==================================================
                   Download Notes -Admin
 ==================================================*/
-
 .admin-label button {
-  border-radius: 3px;
-  font-family: "Open sans";
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 600;
-  width: 255px;
-  height: 40px;
-  background: #6255a5;
-  color: #fff;
-  border: none;
+    border-radius: 3px;
+    font-family: "Open sans";
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    width: 255px;
+    height: 40px;
+    background: #6255a5;
+    color: #fff;
+    border: none;
 }
+
 .admin-label button a {
-  color: #fff;
+    color: #fff;
 }
+
 /*==================================================
                     NOte Detail PAge - Admin
 ==================================================*/
-
 #Note-Details-page {
-  padding-top: 66px;
+    padding-top: 66px;
 }
 
 #Note-Detail {
-  padding: 50px 0px;
+    padding: 50px 0px;
 }
 
 #Note-Detail .note-img img {
-  width: 100%;
-  height: 240px;
+    width: 100%;
+    height: 240px;
 }
 
 #Note-Detail .note-title p {
-  font-family: "Open sans";
-  font-size: 15px;
-  line-height: 20px;
-  font-weight: 600;
-  margin: 0px;
+    font-family: "Open sans";
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+    margin: 0px;
 }
 
 #Note-Detail .Note-Detail p {
-  font-family: "Open sans";
-  font-size: 13px;
-  line-height: 20px;
-  margin: 0px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+    font-family: "Open sans";
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-#Note-Detail .download-btn button {
-  border-radius: 3px;
-  font-family: "Open sans";
-  text-transform: uppercase;
-  font-size: 15px;
-  font-weight: 600;
-  background: #6255a5;
-  color: #fff;
-  border: none;
-  height: 30px;
-  width: 170px;
+#Note-Detail .download-btn button#download-btn {
+    border-radius: 3px;
+    font-family: "Open sans";
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    background: #6255a5;
+    color: #fff;
+    border: none;
+    height: 30px;
+    width: 170px;
 }
 
 #Note-Detail #Note-Details-Right .title {
-  font-size: 15px;
-  font-family: "Open sans";
-  line-height: 28px;
-  color: #333333;
+    font-size: 15px;
+    font-family: "Open sans";
+    line-height: 28px;
+    color: #333333;
 }
 
 #Note-Detail #Note-Details-Right .title-value {
-  font-size: 15px;
-  font-family: "Open sans";
-  line-height: 28px;
-  color: #6255a5;
-  font-weight: 600;
-  text-align: right;
+    font-size: 15px;
+    font-family: "Open sans";
+    line-height: 28px;
+    color: #6255a5;
+    font-weight: 600;
+    text-align: right;
 }
 
 #Note-Detail #inappropriate-mark p {
-  font-size: 12px;
-  font-family: "Open sans";
-  margin-bottom: 0;
-  color: #ff3636;
-  font-weight: 600;
+    font-size: 12px;
+    font-family: "Open sans";
+    margin-bottom: 0;
+    color: #ff3636;
+    font-weight: 600;
 }
 
 #note-preview {
-  border-top: 2px solid #f4f4f4;
-  padding: 50px 0px;
+    border-top: 2px solid #f4f4f4;
+    padding: 50px 0px;
 }
 
 #note-preview #testmonials {
-  border: 2px solid #f4f4f6;
+    border: 2px solid #f4f4f6;
 }
 
 #note-preview #testmonials .testimonial {
-  margin: 20px 20px 0 20px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #f4f4f4;
+    margin: 20px 20px 0 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f4f4f4;
 }
 
 #note-preview #testmonials .customer-img img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
 }
 
 #note-preview #testmonials .customer-nam-des {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 #note-preview #testmonials .customer-nam-des h3 {
-  font-family: "Open sans";
-  font-weight: 700;
-  font-size: 14px;
-  margin: 0px;
+    font-family: "Open sans";
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0px;
 }
 
 #note-preview #testmonials .customer-nam-des .row {
-  margin: 5px 0px 0px 0px;
+    margin: 5px 0px 0px 0px;
 }
 
 #note-preview #testmonials .customer-nam-des p {
-  font-family: "Open sans";
-  font-size: 13px;
-  line-height: 18px;
-  margin: 0px;
-  margin-top: 5px;
+    font-family: "Open sans";
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0px;
+    margin-top: 5px;
 }
+
 .testimonial-para {
-  margin: 0px 20px 0px 75px;
+    margin: 0px 20px 0px 75px;
 }
 
 .center-block-horiz {
-  margin-left: auto !important;
-  margin-right: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .set-border-cicis-menu-to-go {
-  border: 2px solid #4f4f4f;
+    border: 2px solid #4f4f4f;
 }
 
 .responsive-wrapper {
-  position: relative;
-  height: 0;
-
-  overflow: hidden;
+    position: relative;
+    height: 0;
+    overflow: hidden;
 }
 
 .responsive-wrapper img,
 .responsive-wrapper object,
 .responsive-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  border-style: none;
-  padding: 0;
-  margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 #Iframe-Cicis-Menu-To-Go {
-  max-width: 666.67px;
-  max-height: 600px;
-  overflow: hidden;
+    max-width: 666.67px;
+    max-height: 600px;
+    overflow: hidden;
 }
 
 .responsive-wrapper-padding-bottom-90pct {
-  padding-bottom: 82%;
+    padding-bottom: 82%;
 }
 
 .vertical-heading h3 {
-  font-family: "Open sans";
-  font-size: 34px;
-  font-weight: 600;
-  line-height: 38px;
-  color: #6255a5;
+    font-family: "Open sans";
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #6255a5;
 }
 
 .notes-vertical-heading h3 {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 10px;
-  font-family: "Open sans";
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 28px;
-  color: #6255a5;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    font-family: "Open sans";
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #6255a5;
 }
 
 .vertical-heading-sm h3 {
-  margin-bottom: 5px;
-  font-family: "Open sans";
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 28px;
-  color: #6255a5;
+    margin-bottom: 5px;
+    font-family: "Open sans";
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #6255a5;
 }
 
-/* .dropdown:hover > .dropdown-menu {
-  display: block;
-} */
 /* Ratting - Admin */
-
 .rate:not(:checked) > input {
-  position: absolute;
-  top: -9999px;
+    position: absolute;
+    top: -9999px;
 }
+
 .rate:not(:checked) > label {
-  float: right;
-  width: 1em;
-  overflow: hidden;
-  white-space: nowrap;
-  cursor: pointer;
-  font-size: 25px;
-  color: #ccc;
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 25px;
+    color: #ccc;
 }
+
 .rate:not(:checked) > label:before {
-  content: "★ ";
+    content: "★ ";
 }
+
 .rate > input:checked ~ label {
-  color: #ffc700;
+    color: #ffc700;
 }
+
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-  color: #deb217;
+    color: #deb217;
 }
+
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
 .rate > input:checked ~ label:hover,
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
-  color: #c59b08;
+    color: #c59b08;
 }
 
 /*==================================================
                    Reject Modal-Admin
 ==================================================*/
 .reject-modal {
-  padding-top: 126px;
+    padding-top: 126px;
 }
+
 #reject-button {
-  width: 100px;
+    width: 100px;
 }
+
 #cancel-button {
-  width: 100px;
-  background-color: #cccccc;
-  border: none;
+    width: 100px;
+    background-color: #cccccc;
+    border: none;
 }
+
 .reject-modal .modal-footer {
-  border-top: 0px;
-  padding-right: 25px;
+    border-top: 0px;
+    padding-right: 25px;
 }
+
 .reject-modal .modal-title {
-  font-family: "Open sans";
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 28px;
-  color: #6255a5;
-  padding: 25px 0px 0px 0px;
+    font-family: "Open sans";
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #6255a5;
+    padding: 25px 0px 0px 0px;
 }
+
 .reject-modal .modal-header {
-  border-bottom: 0px;
-  padding-left: 25px;
+    border-bottom: 0px;
+    padding-left: 25px;
 }
+
 .reject-modal .modal-body {
-  padding: 0px 25px 0px 25px;
+    padding: 0px 25px 0px 25px;
 }
+
 .reject-modal .form-control {
-  width: 100%;
+    width: 100%;
 }
+
+/*==================================================
+                Thankyou popup modal
+==================================================*/
+#thank-you-modal {
+    margin-top: 100px;
+}
+
+#thank-you-modal .modal-content .modal-body {
+    padding: 0;
+    margin: 50px 55px 30px 40px;
+}
+
+#thank-you-modal .modal-content .close {
+    position: absolute;
+    left: 100%;
+    padding: 15px 15px 0px 0px;
+    transform: translateX(-100%);
+}
+
+#thank-you-modal .modal-content .modal-body .top-logo i {
+    width: 63px;
+    height: 63px;
+    color: #6255a5;
+}
+
+#thank-you-modal .modal-content .modal-body .title {
+    font-family: "Open sans";
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #6255a5;
+}
+
+#thank-you-modal .modal-content .modal-body .detail h3 {
+    font-family: "Open sans";
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #333333;
+}
+
+#thank-you-modal .modal-content .modal-body .detail p {
+    font-family: "Open sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #333333;
+}
+
 /*===============================================
                     Table Color
 ===============================================*/
@@ -1007,8 +1111,9 @@ li.nav-item {
 #members-details-table tr td:first-child,
 #members-details-table tr td:first-child + td + td + td + td,
 #members-details-table tr td:first-child + td + td + td + td + td {
-  text-align: center;
+    text-align: center;
 }
+
 #publish-note-table tr td:first-child + td > a,
 #spamreport-table tr td:first-child + td + td > a,
 #rejected-note-table tr td:first-child + td > a,
@@ -1016,71 +1121,59 @@ li.nav-item {
 #note-under-review-table tr td:first-child + td > a,
 #dashboard-table tr td:first-child + td > a,
 #dashboard-table tr td:first-child + td + td + td + td + td + td + td + td > a,
-#publish-note-table
-  tr
-  td:first-child
-  + td
-  + td
-  + td
-  + td
-  + td
-  + td
-  + td
-  + td
-  + td
-  > a,
-#members-details-table tr td:first-child + td,
-#members-details-table tr td:first-child + td + td + td + td,
+#publish-note-table tr td:first-child + td + td + td + td + td + td + td + td + td > a,
+#members-details-table tr td:first-child + td > a,
+#members-details-table tr td:first-child + td + td + td + td > a,
 #members-table tr td:first-child + td + td + td + td + td > a,
 #members-table tr td:first-child + td + td + td + td + td + td > a,
 #members-table tr td:first-child + td + td + td + td + td + td + td > a,
 #members-table tr td:first-child + td + td + td + td + td + td + td + td > a {
-  color: #6255a5;
+    color: #6255a5;
 }
 
 /*==================================================
                     Footer -Admin
 ==================================================*/
-
 #footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 80px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
 }
 
 .footer {
-  bottom: 0;
-  width: 100%;
-  height: 80px;
-  border-top: 0.2px solid #8a8a8a;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    border-top: 0.2px solid #8a8a8a;
 }
 
 .footer #text-area,
 .footer #icon-area {
-  top: 50%;
-  -webkit-transform: translateY(50%);
-  transform: translateY(50%);
+    top: 50%;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
 }
 
 .footer #icon-area {
-  text-align: right;
+    text-align: right;
 }
 
 .footer #text-area {
-  margin: 0;
-  padding-top: 6px;
+    margin: 0;
+    padding-top: 6px;
 }
 
 .footer #text-area p {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 a {
-  /* color: none; */
-  /* text-decoration: none; */
+    /* color: none; */
+    /* text-decoration: none; */
 }
+
 a:hover {
-  /* color: #fff; */
-  text-decoration: none;
+    /* color: #fff; */
+    text-decoration: none;
 }

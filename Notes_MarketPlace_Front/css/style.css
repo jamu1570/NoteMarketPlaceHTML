@@ -67,7 +67,7 @@ table {
 }
 
 .navbar-transparent .navbar-light .home-nav.login-note-btn button {
-  background: #fff;
+  /* background: #fff; */
   color: #6055a5;
   font-weight: 600;
 }
