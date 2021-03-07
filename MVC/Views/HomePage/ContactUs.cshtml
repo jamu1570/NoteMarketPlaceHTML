@@ -1,0 +1,90 @@
+﻿@model NotesMarketPlace.Models.ContactUs
+
+            <div class="Contact-Us">
+                <div class="container-fluid p-0">
+                    <div class="Search-img-text">
+                        <h3 class="text-center">Contact Us</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="contactus">
+                <div class="container">
+                    <div id="address-details">
+
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 getintouch">
+                                <h3>
+                                    Get In Touch
+                                    <p>Let us know how to get back to you</p>
+                                </h3>
+                            </div>
+                        </div>
+                        @using (Html.BeginForm("ContactUs", "HomePage", FormMethod.Post, new { }))
+                        {
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+
+                                @if(User.Identity.IsAuthenticated){
+                                <div class="form-group">
+                                    <label>Full Name *</label>
+                                    @Html.TextBoxFor(x=>x.FullName, new { @class = "form-control", @value= "@Model.FullName" ,@readonly="readonly"})
+                                    @*<input type="text" class="form-control" value="jaymin" placeholder="Enter your full name" disabled>*@
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address *</label>
+                                    @Html.TextBoxFor(x=>x.EmailID, new { @class = "form-control", @value="@Model.EmailID" ,@readonly="readonly"})
+                                    @* @Html.TextBoxFor(x => x.Title, new { @class = "form-control",@value="Jayminmakwna@gmail.com",disabled = "true"})*@
+                                    @*<input type="text" class="form-control" value="jaymin2033@gmail.com" placeholder="Enter your email address" disabled>*@
+                                </div>
+                                }else
+                                {
+                                <div class="form-group">
+                                    <label>Full Name *</label>
+                                    @Html.TextBoxFor(x=>x.FullName, new { @class = "form-control", @placeholder = "Enter Your FullName" })
+                                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger errormessage" })
+                                    @*  <input type="text" class="form-control" placeholder="Enter your full name">*@
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address *</label>
+                                    @Html.TextBoxFor(x=>x.EmailID, new { @class = "form-control", @placeholder = "Enter Your EmailID" })
+                                    @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger errormessage" })
+                                    @*<input type="text" class="form-control" placeholder="Enter your email address">*@
+                                </div>
+                                }
+
+                                <div class="form-group">
+                                    <label>Subject *</label>
+                                    @Html.TextBoxFor(x=>x.Subject, new { @class = "form-control", @placeholder = "Enter Your Subject" })
+                                    @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger errormessage" })
+                                    @* <input type="text" class="form-control" placeholder="Enter your subject">*@
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">
+                                        Comments
+                                        *
+                                    </label>
+                                    @Html.TextAreaFor(x => x.Comments, new { @class = "form-control", rows = "8", @placeholder = "Comments2..." })
+                                    @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger errormessage error_field" })
+                                    @*<textarea class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="comments..."></textarea>*@
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <button type="submit" class="btn-general btn-submit-form">submit</button>
+
+                            </div>
+                        </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+     
+

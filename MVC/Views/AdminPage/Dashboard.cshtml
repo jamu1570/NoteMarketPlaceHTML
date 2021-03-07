@@ -1,0 +1,239 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="User-Dashboard">
+        <div class="row dashboard-1">
+            <div class="col-md-6 col-sm-6 col-xs-6 text-left">
+                <h3>Dashboard</h3>
+            </div>
+        </div>
+        <div class="dashboard-detail-2">
+            <div class="flex-container-admin">
+                <div style="flex-grow: 3" id="dash-admin-1">
+                    <div>
+                        <a href="4.3.1-NoteUnderReview.html">
+                            <h6 class="count">20</h6><span>
+                                Number of Notes in
+                                Review for<br> Publish
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div style="flex-grow: 3">
+                    <div>
+                        <a href="4.3.3-Downloaded-Notes.html">
+                            <h6 class="count">103</h6><span>
+                                Number of New
+                                Notes Downloaded <br>(Last 7
+                                days)
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div style="flex-grow: 3" id="dash-admin-3">
+                    <div>
+                        <a href="4.0.0-Members.html">
+                            <h6 class="count">223</h6><span>
+                                Number of New
+                                Registrations <br>(Last 7 days)
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="progress-3">
+        <div class="progress-notes-2">
+            <div class="row progress-dashboard">
+                <div class="col-md-3 admin-label">
+                    <h3>Published Notes</h3>
+                </div>
+                <div class="col-md-9 search-label">
+                    <div class="progress-note-btn">
+                        <div class="row">
+                            <div class="col-md-9 text-right">
+                                <div>
+                                    @using(Html.BeginForm("Dashboard","Admin",FormMethod.Get))
+                        {
+                                    <input type="text" name="SearchPublished" id="search-enter-progress" placeholder="Search" title="Type
+                                                            in a name">
+                                    <button type="submit">Search</button>
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="select-month">
+                                    <div class="form-group">
+                                        <select class="form-control" id="exampleFormControlSelect2">
+                                            <option>
+                                                Select
+                                                month
+                                            </option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="progress-table" style="overflow-x:auto;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">SR NO.</th>
+                        <th scope="col">@Html.ActionLink("TITLE", "Dashboard", new { SortOrderPublished=ViewBag.TitleSortParamPublish,SearchPublished = Request.QueryString["SearchPublished"] })</th>
+                        <th scope="col">@Html.ActionLink("CATEGORY", "Dashboard", new { SortOrderPublished=ViewBag.CategorySortParamPublish,SearchPublished = Request.QueryString["SearchPublished"] })</th>
+                        <th scope="col">@Html.ActionLink("ATTACHMENT SIZE", "Dashboard", new { SortOrderPublished=ViewBag.SizeSortParamPublish,SearchPublished = Request.QueryString["SearchPublished"] })</th>
+                        <th scope="col">@Html.ActionLink("SELL TYPE", "Dashboard", new { SortOrderPublished=ViewBag.SellTypeSortParamPublish,SearchPublished = Request.QueryString["SearchPublished"] })</th>
+                        <th scope="col">@Html.ActionLink("PRICE", "Dashboard", new { SortOrderPublished=ViewBag.PriceSortParamPublish,SearchPublished = Request.QueryString["SearchPublished"] })</th>
+                        <th scope="col">@Html.ActionLink("PUBLISHER", "Dashboard", new { SortOrderPublished=ViewBag.PublisherSortParamPublish,SearchPublished = Request.QueryString["SearchPublished"] })</th>  
+                        <th scope="col">@Html.ActionLink("PUBLISH DATE", "Dashboard", new { SortOrderPublished=ViewBag.DateSortParamPublish,SearchPublished = Request.QueryString["SearchPublished"] })</th>
+                        <th scope="col">@Html.ActionLink("NUMBER OF DOWNLOADS", "Dashboard", new { SortOrderPublished=ViewBag.DownloadsSortParamPublish,SearchPublished = Request.QueryString["SearchPublished"] })</th>
+                        <th scope="col"></th>
+                     
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+
+                     IPagedList<NotesMarketPlace.Models.AllPublishedNote> Published = ViewBag.PublishedNote;
+                    }
+
+@{
+                    var count = 0;
+                    if (Published.Count == 0)
+                            {
+                    <tr>
+                        <td colspan="10" class="text-center NoRecord">No Records Found</td>
+                    </tr>
+                            }
+                    }
+                    @foreach(var item in Published)
+                                {
+
+                <tr>
+                    <td>@(count + ((Published.PageNumber - 1) * Published.PageSize) + 1)</td>
+                    @*<td>
+            @item.NoteDetails.CreatedDate
+        </td>*@
+                   
+                    <td><a href="/Admin/NoteDetailsAdmin/@item.NoteDetails.SellerNotesID">  @item.NoteDetails.Title</a>
+                    </td>
+                   
+
+                    <td>
+                        @item.Category.Name
+                    </td>
+                    <td>@item.attachment.AttachmentSize KB</td>
+                    <td>
+                        @if (@item.NoteDetails.IsPaid == true)
+                                    {
+                        <p>Paid</p>
+                                    }
+                                    else
+                                    {
+                        <p>Free</p>
+                                    }
+                    </td>
+
+                    <td>
+                        @if (@item.NoteDetails.IsPaid == true)
+                                    {
+                        <p> $ <span class="count"> @item.NoteDetails.SellingPrice</span></p>
+                                    }
+                                    else
+                                    {
+                        <p>$0</p>
+                                    }
+                    </td>
+                    <td>@item.user.FirstName @item.user.LastName</td>
+
+                    <td>
+                        @item.NoteDetails.PublishedDate
+                    </td>
+
+                    <td class="text-center"><a href="4.3.3-Downloaded-Notes.html" class="count">@item.NoteDetails.Downloads.Where(x=>x.NoteID == @item.NoteDetails.SellerNotesID).Count()</a></td>
+                    <td>
+                        <div class="dropdown admin-table">
+                            <a class="dropbtn"><img src="~/Content/admin/images/Dashboard/three-dot.png" alt="delete-icon" /></a>
+                            <div class="dropdown-content">
+                                <a href="/Member/DownloadAttechedFile/@item.NoteDetails.SellerNotesID">
+                                    Download
+                                    Notes
+                                </a>
+                                <a href="/Admin/NoteDetailsAdmin/@item.NoteDetails.SellerNotesID">
+                                    View More
+                                    Details
+                                </a>
+                                <a href="" data-toggle="modal" data-target="#@item.NoteDetails.SellerNotesID-unpublish">Unpublish</a>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade reject-modal" id="@item.NoteDetails.SellerNotesID-unpublish" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">@item.NoteDetails.Title</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        @using(Html.BeginForm("Unpublished/"+ @item.NoteDetails.SellerNotesID,"Admin",FormMethod.Get,new{id="AllSeachNote"}))
+                                        {
+                                        <div class="modal-body">
+                                                <div class="form-group">
+                                                    <div class="justify-content-start">
+                                                        <h6>
+                                                            <br>
+                                                            Remarks
+                                                        </h6>
+                                                    </div>
+                                                    <textarea class="form-control" name="Remarks" id="exampleFormControlTextarea1" rows="5" placeholder="Write Remarks" required></textarea>
+                                                </div>      
+                                        </div>
+                                        <div class="modal-footer justify-content-end">
+                                            <button class="btn btn-danger" type="submit" id="reject-button">Unpublish</button>
+                                            <button class="btn btn-secondary" id="cancel-button" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+</td>               
+                </tr>
+               {count = count+1;}
+                                }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-section">
+            <div class="pagination-notes">
+                <div class="pagination-number">
+                    @Html.PagedListPager(Published, PublishedNotespage=> Url.Action("Dashboard",new{PublishedNotespage,
+                     SearchPublished = Request.QueryString["SearchPublished"],
+                    SortOrderPublished = Request.QueryString["SearchPublished"]
+
+                        })
+                     ,new PagedListRenderOptions(){Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true}
+                     )
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

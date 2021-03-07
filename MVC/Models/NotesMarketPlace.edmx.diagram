@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="94855d9e97b343eeab5e112674fa2341" Name="Diagram1" ZoomLevel="103">
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.Countries" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.Downloads" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.NoteCategories" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.NoteTypes" Width="1.5" PointX="0.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.ReferenceData" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.SellerNotes" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.SellerNotesAttachments" Width="1.5" PointX="5.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.SellerNotesReportedIssues" Width="1.5" PointX="10.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.SellerNotesReviews" Width="1.5" PointX="13.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.SystemConfigurations" Width="1.5" PointX="4.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.UserProfile" Width="1.5" PointX="6.125" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.UserRoles" Width="1.5" PointX="1.5" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NoteMaeketPlaceModel.Users" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotes_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_Downloads_SellerNotes" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_Downloads_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_Downloads_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotesReportedIssues_Downloads" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotesReviews_Downloads" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotes_NoteCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotes_NoteTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotes_ReferenceData" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_UserProfile_ReferenceData" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotes_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotes_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotesAttachments_SellerNotes" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotesReportedIssues_SellerNotes" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotesReviews_SellerNotes" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotesReportedIssues_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_SellerNotesReviews_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_UserProfile_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="NoteMaeketPlaceModel.FK_Users_UserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
