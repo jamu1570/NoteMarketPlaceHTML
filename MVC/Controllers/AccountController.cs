@@ -109,7 +109,7 @@ namespace NotesMarketPlace.Controllers
 
                 // Generating Email Verification Link
                 /*var activationCode = obj.Password;*/
-                var verifyUrl = "/Account/VerifyAccount/?VerificationCode" + activationCode;
+                var verifyUrl = "/Account/VerifyAccount/" + activationCode;
                 var activationlink = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
 
                 // Sending Email
@@ -125,7 +125,7 @@ namespace NotesMarketPlace.Controllers
 
         }
 
-       /* [Route("VerifyAccount/activationCode?")]*/
+       [Route("VerifyAccount/{VerificationCode}")]
         [HttpGet]
         public ActionResult VerifyAccount(string VerificationCode)
         {
@@ -134,7 +134,7 @@ namespace NotesMarketPlace.Controllers
                 DBObject.Configuration.ValidateOnSaveEnabled = false; // This line I have added here to avoid 
                                                                 // Confirm password does not match issue on save changes
      
-                var v = DBObject.Users.Single(x => x.VerificationCode == VerificationCode);
+                var v = DBObject.Users.Where(x => x.VerificationCode == VerificationCode).FirstOrDefault();
                 if (v != null)
                 {
                     v.IsEmailVerified = true;
