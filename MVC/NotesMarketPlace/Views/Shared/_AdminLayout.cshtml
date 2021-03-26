@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- important meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,
+            initial-scale=1 maximum-scale=1.0,user-scalable=no">
+    <!-- title -->
+    <title>Admin</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/admin/images/Homepage/favicon.ico">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font awesome -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/admin/css/font-awesome/font-awesome.min.css">
+    <!-- Bootstrap Css    -->
+    <link rel="stylesheet" href="~/Content/admin/css/bootstrap/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="~Content/admin/css/style.css"> -->
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/Content/admin/css/style-admin.css">
+    <!-- Responsive CSS -->
+    <!-- <link rel="stylesheet" href="~Content/admin/css/responsive.css"> -->
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/Content/admin/css/responsive-admin.css">
+
+   <script>
+       function NoteFunction() {
+           document.getElementById("AllSeachNote").submit();
+       }
+
+     
+    </script>
+
+</head>
+
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
+            <nav class="navbar navbar-expand-lg navbar-light
+                    bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="/Admin/Dashboard"><img src="~/Content/admin/images/Homepage/logo.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle
+                            navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Admin/Dashboard">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown-navbar">
+                                    <a class="dropbtn-navbar nav-link " href="#">Notes <span><i class="fa fa-angle-down"></i></span></a>
+                                    <div class="dropdown-content-navbar">
+                                        <a href="/Admin/NotesUnderReview">Notes Under Review
+                                        </a>
+                                        <a href="/Admin/PublishedNotes">
+                                            Published
+                                            Notes
+                                        </a>
+                                        <a href="/Admin/DownloadNotes">
+                                            Downloaded
+                                            Notes
+                                        </a>
+                                        <a href="/Admin/NotesRejected">
+                                            Rejected
+                                            Notes
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="/Admin/MembersAdmin">Members</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown-navbar">
+                                    <a class="dropbtn-navbar nav-link" href="#">Reports<span class="badge badge-danger">@TempData["SpamReportsCount"]</span> <span><i class="fa fa-angle-down"></i></span></a>
+                                    @{
+                                    TempData.Keep("SpamReportsCount");
+                                    }
+                                    <div class="dropdown-content-navbar">
+                                        <a href="/Admin/SpamReports">
+                                            Spam
+                                            Reports
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown-navbar">
+                                    <a class="dropbtn-navbar
+                                            nav-link" href="#">Settings <span><i class="fa fa-angle-down"></i></span></a>
+                                    <div class="dropdown-content-navbar">
+                                        @if (User.IsInRole("SuperAdmin"))
+                                        {
+                                        <a href="/Admin/SystemConfiguration">
+                                            Manage
+                                            System Configuration
+                                        </a>
+                                        <a href="/Admin/Administrators">
+                                            Manage
+                                            Administrator
+                                        </a>
+                                        }
+                                        <a href="/Admin/Categories">
+                                            Manage
+                                            Category
+                                        </a>
+                                        <a href="/Admin/Types">
+                                            Manage
+                                            Type
+                                        </a>
+                                        <a href="/Admin/Countries">
+                                            Manage
+                                            Countries
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown-profile">
+                                    <a class="dropbtn-profile nav-link" href="#"><img src="@TempData["ProfilePicture"]" alt="customer-image"><span><i class="fa fa-angle-down"></i></span></a>
+                                    @{
+                                    TempData.Keep("ProfilePicture");
+                                    }
+                                    <div class="dropdown-content-profile">
+                                        <a href="/Admin/UpdateProfileAdmin">
+                                            Update
+                                            Profile
+                                        </a>
+                                        <a href="/Admin/ChangePasswordAdmin">
+                                            Change
+                                            Password
+                                        </a>
+                                        <a onclick="return confirm('Are you sure ! you want to Logout!!');" href="/Account/Logout">logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <div class="login-note-btn" id="logout-btn">
+                                <button><a onclick="return confirm('Are you sure ! you want to Logout!!');" href="/Account/Logout">Logout</a></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+            @RenderBody()
+
+        </div>
+        <!-- footer section -->
+        <footer id="footer">
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div id="text-area" class="col-md-6">
+                            <p>Version : 1.1.24</p>
+                        </div>
+                        <div id="icon-area" class="col-md-6">
+                            <p>
+                                Copyright <i class="fa
+                                        fa-copyright"></i>
+                                TatvaSoft
+                                All rights reserved.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer section End -->
+        </footer>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Jquery   -->
+    <script src="~/Scripts/admin/js/jquery/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="~/Scripts/admin/js/bootstrap/bootstrap.min.js"></script>
+    <!-- Custom Js -->
+    <script src="~/Scripts/admin/js/script.js"></script>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+
+</html>
+

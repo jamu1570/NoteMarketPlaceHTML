@@ -1,0 +1,174 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container download-notes">
+    <div class="User-Dashboard">
+        <div class="row dashboard-1">
+            <div class="col-md-6 col-sm-6 col-xs-6
+                                    text-left">
+                <h3>Downloaded Notes</h3>
+            </div>
+        </div>
+    </div>
+    <div class="progress-3">
+        <div class="progress-notes-2">
+            @using(Html.BeginForm("DownloadNotes","Admin",FormMethod.Get,new{id="AllSeachNote"}))
+                        {
+            <div class="row progress-dashboard">
+                <div class="col-md-6 col-sm-12 col-xs-12
+                                        admin-label">
+                    <div class="row" id="nsb-menu">
+                        <div class="col-md-4 col-sm-4">
+                           
+                                <h6 id="note-name">Note</h6>
+                                <div class="form-group">
+                                    @Html.DropDownList("AllNotes",(SelectList)ViewBag.AllNotes, "Select Notes", new { id = "AllNotes", name = "AllNotes", @class = "form-control",onchange="NoteFunction();" })
+                     
+                                </div>
+                            
+                        </div>
+                        <div class="col-md-4 col-sm-4" id="seller-menu">
+                       
+                                <h6 id="seller-name">Seller</h6>
+                                <div class="form-group">
+                                    @Html.DropDownList("SellerName",(SelectList)ViewBag.SellerName, "Select Seller", new { id = "SellerName", name = "SellerName", @class = "form-control",onchange="NoteFunction();" })
+                                   
+                                </div>                       
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                           
+                                <h6 id="buyer-name">Buyer</h6>
+                                <div class="form-group">
+                                    @Html.DropDownList("BuyerName",(SelectList)ViewBag.BuyerName, "Select Buyer", new { id = "BuyerName", name = "BuyerName", @class = "form-control",onchange="NoteFunction();" })                               
+                                </div>                     
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12
+                                        search-label
+                                        text-right">
+                    <div class="progress-note-btn">
+                        <input type="text" name="Search" id="search-enter-progress" placeholder="Search" title="Type
+                                                in a name">
+                        <button type="submit">Search</button>
+
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="progress-table" style="overflow-x:auto;">
+            <table class="table" id="downloaded-note">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">SR NO.</th>
+                        <th scope="col">@Html.ActionLink("TITLE", "DownloadNotes", new { SortOrder=ViewBag.TitleSortParam,Search = Request.QueryString["Search"] })</th>
+                        <th scope="col">@Html.ActionLink("CATEGORY", "DownloadNotes", new { SortOrder=ViewBag.CategorySortParam,Search = Request.QueryString["Search"] })</th>
+                        <th scope="col">@Html.ActionLink("BUYER", "DownloadNotes", new { SortOrder=ViewBag.BuyerSortParam,Search = Request.QueryString["Search"] }) </th>
+                        <th></th>
+                        <th scope="col">@Html.ActionLink("SELLER", "DownloadNotes", new { SortOrder=ViewBag.SellerSortParam,Search = Request.QueryString["Search"] })</th>
+                        <th></th>
+                        <th scope="col">@Html.ActionLink("SELL TYPE", "DownloadNotes", new { SortOrder=ViewBag.SellTypeSortParam,Search = Request.QueryString["Search"] }) </th>
+                        <th scope="col">@Html.ActionLink("PRICE", "DownloadNotes", new { SortOrder=ViewBag.PriceSortParam,Search = Request.QueryString["Search"] }) </th>
+                        <th scope="col">@Html.ActionLink("DOWNLOADED DATE/TIME", "DownloadNotes", new { SortOrder=ViewBag.DateSortParam,Search = Request.QueryString["Search"] }) </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                     IPagedList<NotesMarketPlace.Models.AdminDownloadNotes> DownloadedNotes = ViewBag.downloadsnotes;
+                    }
+
+                    @{
+                    var count = 0;
+                    if (DownloadedNotes.Count == 0)
+                            {
+                        <tr>
+                            <td colspan="11" class="text-center NoRecord">No Records Found</td>
+                        </tr>
+                            }
+                    }
+
+                    @foreach(var item in DownloadedNotes)
+                                {
+
+                    <tr>
+                        <td class="text-center">@(count + ((DownloadedNotes.PageNumber - 1) * DownloadedNotes.PageSize) + 1)</td>
+                        <td><a href="/Admin/NoteDetailsAdmin/@item.downloads.NoteID">@item.downloads.NoteTitle</a></td>
+                        <td>@item.downloads.NoteCategory</td>
+                        <td>
+                            @item.buyer.FirstName @item.buyer.LastName
+                        </td>
+                        <td class="eye-image"><a href="/Admin/MemberDetails/@item.buyer.UserID"><img src="~/Content/admin/images/Dashboard/eye.png" alt=""></a> </td>
+                        <td>
+                            @item.seller.FirstName @item.seller.LastName
+                        </td>
+                        <td class="eye-image"><a href="/Admin/MemberDetails/@item.seller.UserID"><img src="~/Content/admin/images/Dashboard/eye.png" alt=""></a></td>
+                        <td>
+                            @if (@item.downloads.IsPaid == true)
+                                    {
+                            <p>Paid</p>
+                                    }
+                                    else
+                                    {
+                            <p>Free</p>
+                                    }
+                        </td>
+                        <td>
+                            
+                                @if (@item.downloads.IsPaid == true)
+                                    {
+                                <p> $<span class="count"> @item.downloads.PurchasedPrice</span></p>
+                                    }
+                                    else
+                                    {
+                                <p>$0</p>
+                                    }
+                          
+                        </td>
+                        <td>
+                            @item.downloads.AttachmentDownloadedDate.Value.ToString("dd-MM-yyyy, HH:mm")
+                        </td>
+                        <td>
+                            <div class="dropdown admin-table">
+                                <a class="dropbtn"><img src="~/Content/admin/images/Dashboard/three-dot.png" alt="delete-icon" /></a>
+                                <div class="dropdown-content">
+                                    <a href="/Admin/DownloadAttechedFile/@item.downloads.NoteID">
+                                        Download
+                                        Notes
+                                    </a>
+                                    <a href="/Admin/NoteDetailsAdmin/@item.downloads.NoteID">
+                                        View More
+                                        Details
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                     {count = count+1;}
+                                }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-section">
+            <div class="pagination-notes">
+                <div class="pagination-number">
+                    @Html.PagedListPager(DownloadedNotes, page=> Url.Action("DownloadNotes",new{page,
+           Search = Request.QueryString["Search"],
+          SortOrder= Request.QueryString["SortOrder"],
+           SellerName = Request.QueryString["SellerName"],
+            BuyerName = Request.QueryString["BuyerName"],
+            AllNotes = Request.QueryString["AllNotes"]
+              })
+           ,new PagedListRenderOptions(){Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true,MaximumPageNumbersToDisplay = 5}
+           )
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

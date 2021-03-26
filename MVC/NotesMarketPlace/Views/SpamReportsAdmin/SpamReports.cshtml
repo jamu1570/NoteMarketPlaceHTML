@@ -1,0 +1,127 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container members">
+    
+    <div class="progress-3">
+        @using(Html.BeginForm("SpamReports","Admin",FormMethod.Get,new{id="AllSeachNote"}))
+                        {
+        <div class="progress-notes-2" id="spamreport">
+            <div class="row progress-dashboard">
+                <div class="col-md-12">
+                    @if(TempData["SpamReport"] != null){
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>@TempData["SpamReport"]</strong> @TempData["Message"]
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                 }
+                </div>
+                <div class="col-md-3 admin-label">
+                    <h3 id="members-label">Spam Reports</h3>
+                </div>
+                <div class="col-md-9 search-label text-right">
+                    <div class="progress-note-btn">
+                        <input type="text" name="Search" id="search-enter-progress" placeholder="Search" title="Type in a name">
+                        <button type="submit">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+
+        <div class="progress-table" style="overflow-x:auto;">
+            <table class="table" id="spamreport-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">SR NO.</th>
+                        <th scope="col">@Html.ActionLink("Reported By", "SpamReports", new { SortOrder=ViewBag.ReportedBySortParam,Search = Request.QueryString["Search"] })</th>
+                        <th scope="col">@Html.ActionLink("TITLE", "SpamReports", new { SortOrder=ViewBag.TitleSortParam,Search = Request.QueryString["Search"] })</th>
+                        <th scope="col">@Html.ActionLink("CATEGORY", "SpamReports", new { SortOrder=ViewBag.CategorySortParam,Search = Request.QueryString["Search"] })</th>
+
+                        <th scope="col">@Html.ActionLink("DATE ADDED", "SpamReports", new { SortOrder=ViewBag.DateSortParam,Search = Request.QueryString["Search"] })</th>
+
+                        <th scope="col">Remark</th>
+                        <th scope="col" class="text-center" >Action</th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                     IPagedList<NotesMarketPlace.Models.SpamReportedAdmin> SpamReportNote = ViewBag.NotesSpamReport;
+                    }
+
+                    @{
+                    var count = 0;
+                    if (SpamReportNote.Count == 0)
+                            {
+                        <tr>
+                            <td colspan="9" class="text-center NoRecord">No Records Found</td>
+                        </tr>
+                            }
+                    }
+                    @foreach(var item in SpamReportNote)
+                                {
+
+                <tr>
+                    <td>@(count + ((SpamReportNote.PageNumber - 1) * SpamReportNote.PageSize) + 1)</td>
+                    <td>@item.user.FirstName @item.user.LastName</td>
+                    <td>
+                        <a href="/Admin/NoteDetailsAdmin/@item.NoteDetails.SellerNotesID">  @item.NoteDetails.Title</a>
+                    </td>
+                    <td>
+                        @item.Category.Name
+                    </td>
+                    <td>
+                        @item.Reports.ModifiedDate.Value.ToString("dd-MM-yyyy, HH:mm")
+                    </td>
+                    <td>
+                        @item.Reports.Remarks
+                    </td>
+                    <td class="text-center">
+                        <a onclick="return confirm('Are You Sure For Delete ?')" class="dropbtn " href="/Admin/DeleteSpamReport/@item.Reports.ReportID"><img src="~/Content/Admin/images/Dashboard/delete-2.png" alt="delete-icon" /></a>
+                    </td>
+                    <td>
+                        <div class="dropdown admin-table">
+                            <a class="dropbtn"><img src="~/Content/Admin/images/Dashboard/three-dot.png" alt="delete-icon" /></a>
+                            <div class="dropdown-content">
+                                <a href="/Admin/DownloadAttechedFile/@item.NoteDetails.SellerNotesID">Download Notes</a>
+                                <a href="/Admin/NoteDetailsAdmin/@item.NoteDetails.SellerNotesID">
+                                    View More
+                                    Details
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                      {count = count+1;}
+
+                                }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination-section">
+            <div class="pagination-notes">
+                <div class="pagination-number">
+
+                    @Html.PagedListPager(SpamReportNote, page=> Url.Action("SpamReports",new{page,
+                   Search = Request.QueryString["Search"],
+                  SortOrder = Request.QueryString["SortOrder"],
+
+                      })
+                   ,new PagedListRenderOptions(){Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true,MaximumPageNumbersToDisplay = 5}
+                   )
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

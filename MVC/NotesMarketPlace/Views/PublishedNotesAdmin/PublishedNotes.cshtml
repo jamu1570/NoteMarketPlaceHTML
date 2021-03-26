@@ -1,0 +1,188 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container note-under-review">
+    <div class="User-Dashboard">
+        <div class="row dashboard-1">
+            <div class="col-md-6 col-sm-6 col-xs-6
+                                    text-left">
+                <h3>Published Notes</h3>
+            </div>
+        </div>
+    </div>
+    <div class="progress-3">
+        @using(Html.BeginForm("PublishedNotes","Admin",FormMethod.Get,new{id="AllSeachNote"}))
+                        {
+        <div class="progress-notes-2">
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 id="seller-name">Seller</h6>
+                </div>
+            </div>
+            <div class="row progress-dashboard">
+                <div class="col-md-3 admin-label">
+                    <div class="form-group">
+                        @Html.DropDownList("SellerName",(SelectList)ViewBag.SellerName, "Select Seller", new { id = "SellerName", name = "SellerName", @class = "form-control",onchange="NoteFunction();" })
+
+                    </div>
+                </div>
+                <div class="col-md-9 search-label text-right">
+                    <div class="progress-note-btn">
+
+                        <input type="text" name="Search" id="search-enter-progress" placeholder="Search" title="Type
+                                                in a name">
+                        <button type="submit">Search</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+        <div class="progress-table" style="overflow-x:auto;">
+            <table class="table" id="note-under-review-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">SR NO.</th>
+                        <th scope="col">@Html.ActionLink("TITLE", "PublishedNotes", new { SortOrder=ViewBag.TitleSortParam,Search = Request.QueryString["Search"] })</th>
+                        <th scope="col">@Html.ActionLink("CATEGORY", "PublishedNotes", new { SortOrder=ViewBag.CategorySortParam,Search = Request.QueryString["Search"] })</th>
+                        <th scope="col">@Html.ActionLink("SELL TYPE", "PublishedNotes", new { SortOrder=ViewBag.SellTypeSortParam,Search = Request.QueryString["Search"] }) </th>
+                        <th scope="col">@Html.ActionLink("PRICE", "PublishedNotes", new { SortOrder=ViewBag.PriceSortParam,Search = Request.QueryString["Search"] }) </th>
+                        <th scope="col">@Html.ActionLink("SELLER", "PublishedNotes", new { SortOrder=ViewBag.SellerSortParam,Search = Request.QueryString["Search"] })</th>
+                        <th></th>
+                        <th scope="col">@Html.ActionLink("Published Date", "PublishedNotes", new { SortOrder=ViewBag.DateSortParam,Search = Request.QueryString["Search"] })</th>
+                        <th scope="col">@Html.ActionLink("APPROVED BY", "PublishedNotes", new { SortOrder=ViewBag.ApprovedBySortParam,Search = Request.QueryString["Search"] })</th>
+                        <th scope="col">NUMBER OF DOWNLOADS</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                     IPagedList<NotesMarketPlace.Models.PublishedNoteAdmin> PublishedNotes = ViewBag.NotesPublished;
+                    }
+
+                    @{
+                    var count = 0;
+                    if (PublishedNotes.Count == 0)
+                            {
+                        <tr>
+                            <td colspan="11" class="text-center NoRecord">No Records Found</td>
+                        </tr>
+                            }
+                    }
+                    @foreach(var item in PublishedNotes)
+                                {
+                    <tr>
+                        <td>@(count + ((PublishedNotes.PageNumber - 1) * PublishedNotes.PageSize) + 1)</td>
+                        <td>
+                            <a href="/Admin/NoteDetailsAdmin/@item.NoteDetails.SellerNotesID">  @item.NoteDetails.Title</a>
+                        </td>
+                        <td>
+                            @item.Category.Name
+                        </td>
+                        <td>
+                            @if (@item.NoteDetails.IsPaid == true)
+                                    {
+                            <p>Paid</p>
+                                    }
+                                    else
+                                    {
+                            <p>Free</p>
+                                    }
+                        </td>
+                        <td>
+                          
+                                @if (@item.NoteDetails.IsPaid == true)
+                                    {
+                                <p> $ <span class="count"> @item.NoteDetails.SellingPrice</span></p>
+                                    }
+                                    else
+                                    {
+                                <p>$0</p>
+                                    }
+                           
+                        </td>
+                        <td>@item.user.FirstName @item.user.LastName</td>
+                        <td class="eye-image"><a href="/Admin/MemberDetails/@item.NoteDetails.SellerID"><img src="~/Content/admin/images/Dashboard/eye.png" alt=""></a> </td>
+                        <td>
+                            @item.NoteDetails.PublishedDate.Value.ToString("dd-MM-yyyy, HH:mm")
+                        </td>
+                        <td>@item.admin.FirstName @item.admin.LastName</td>
+
+                        <td class="text-center"><a href="/Admin/DownloadNotes?Search=@item.NoteDetails.Title" class="count">@item.NoteDetails.Downloads.Where(x=>x.NoteID == @item.NoteDetails.SellerNotesID && x.IsSellerHasAllowedDownload == true && x.AttachmentPath != null && x.IsAttachmentDownloaded == true).Count()</a></td>
+
+                        <td>
+                            <div class="dropdown admin-table">
+                                <a class="dropbtn"><img src="~/Content/admin/images/Dashboard/three-dot.png" alt="delete-icon" /></a>
+                                <div class="dropdown-content">
+                                    <a href="/Admin/DownloadAttechedFile/@item.NoteDetails.SellerNotesID">
+                                        Download
+                                        Notes
+                                    </a>
+                                    <a href="/Admin/NoteDetailsAdmin/@item.NoteDetails.SellerNotesID">
+                                        View More
+                                        Details
+                                    </a>
+                                    <a href="" data-toggle="modal" data-target="#@item.NoteDetails.SellerNotesID-unpublish">Unpublish</a>
+                                </div>
+
+                                <!-- Modal -->
+                                <div class="modal fade reject-modal" id="@item.NoteDetails.SellerNotesID-unpublish" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">@item.NoteDetails.Title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            @using(Html.BeginForm("Unpublished/"+ @item.NoteDetails.SellerNotesID,"Admin",FormMethod.Get,new{id="AllSeachNote"}))
+                                        {
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <div class="justify-content-start">
+                                                        <h6>
+                                                            <br>
+                                                            Remarks
+                                                        </h6>
+                                                    </div>
+                                                    <textarea class="form-control" name="Remarks" id="exampleFormControlTextarea1" rows="5" placeholder="Write Remarks" required></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer justify-content-end">
+                                                <button class="btn btn-danger" type="submit" id="reject-button">Unpublish</button>
+                                                <button class="btn btn-secondary" id="cancel-button" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        }
+                                        </div>
+                                    </div>
+                                </div>
+                        </td>
+                    </tr>
+                      {count = count+1;}
+
+                                }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-section">
+            <div class="pagination-notes">
+                <div class="pagination-number">
+
+                    @Html.PagedListPager(PublishedNotes, page=> Url.Action("PublishedNotes",new{page,
+                   Search = Request.QueryString["Search"],
+                  SortOrder = Request.QueryString["SortOrder"],
+                     SellerName = Request.QueryString["SellerName"]
+                      })
+                   ,new PagedListRenderOptions(){Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true,MaximumPageNumbersToDisplay = 5}
+                   )
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

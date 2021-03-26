@@ -1,0 +1,103 @@
+﻿@model NotesMarketPlace.Models.SystemConfigurationSuperAdmin
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="admin-profile">
+    <div class="container">
+        <div class="admin-heading">
+            <h3>
+                Manage System Configuration
+            </h3>
+        </div>
+        <div class="admin-profile-details">
+            @using (Html.BeginForm("SystemConfiguration", "Admin", FormMethod.Post, new {enctype = "multipart/form-data" }))
+            {
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Support Email address *</label>
+                        @Html.TextBoxFor(x=>x.SupportEmailID, new { @class = "form-control",@value="@Model.SupportEmailID", @placeholder = "Enter Your SupportEmailID",name="SupportEmailID" })
+                        @Html.ValidationMessageFor(model => model.SupportEmailID, "", new { @class = "text-danger errormessage" })
+                    </div>
+                    <div class="form-group">
+                        <label>Support Email Password *</label>
+                        @Html.TextBoxFor(x=>x.SupportEmailIDPassword, new {id="exampleInputPassword1",@type="password",@class = "form-control", @placeholder = "Enter Your SupportEmailID Password",name="SupportEmailIDPassword" })
+                        <span toggle="#password-field" id="toggle-password" class="toggle-password"><img src="~/Content/images/login/eye.png" alt="toggle-password"></span>
+                        @Html.ValidationMessageFor(model => model.SupportEmailIDPassword, "", new { @class = "text-danger errormessage" })
+                    </div>
+                    <div class="form-group">
+                        <label>Support phone number *</label>
+                        @Html.TextBoxFor(x=>x.SupportPhoneNumber, new { @class = "form-control",@value="@Model.SupportPhoneNumber", @placeholder = "Enter Your SupportPhoneNumber",name="SupportPhoneNumber" })
+                        @Html.ValidationMessageFor(model => model.SupportPhoneNumber, "", new { @class = "text-danger errormessage" })
+                    </div>
+                    <div class="form-group">
+                        <label>Email address(es) (for various system will send notification to these users) *</label>
+                        @Html.TextBoxFor(x=>x.EmailIDs, new { @class = "form-control",@value="@Model.EmailIDs", @placeholder = "Enter Your EmailIDs",name="EmailIDs" })
+                        @Html.ValidationMessageFor(model => model.EmailIDs, "", new { @class = "text-danger errormessage" })
+                    </div>
+                    <div class="form-group">
+                        <label>Facebook URL</label>
+                        @Html.TextBoxFor(x=>x.FBURL, new { @class = "form-control",@value="@Model.FBURL", @placeholder = "Enter Your FBURL",name="FBURL" })
+                        @Html.ValidationMessageFor(model => model.FBURL, "", new { @class = "text-danger errormessage" })
+                    </div>
+                    <div class="form-group">
+                        <label>TwitterURL</label>
+                        @Html.TextBoxFor(x=>x.TwitterURL, new { @class = "form-control",@value="@Model.TwitterURL", @placeholder = "Enter Your TwitterURL",name="TwitterURL" })
+                        @Html.ValidationMessageFor(model => model.TwitterURL, "", new { @class = "text-danger errormessage" })
+                    </div>
+                    <div class="form-group">
+                        <label>LinkedIn URL</label>
+                        @Html.TextBoxFor(x=>x.LinkedInURL, new { @class = "form-control",@value="@Model.LinkedInURL", @placeholder = "Enter Your LinkedInURL",name="InstaURL" })
+                        @Html.ValidationMessageFor(model => model.LinkedInURL, "", new { @class = "text-danger errormessage" })
+                    </div>
+                    <div class="form-group profile-picture-input last-row">
+                        <label>Default image for notes (if seller do not upload)</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" accept="image/jpg" id="DefaultNotePicture" name="DefaultNotePicture">
+
+                            <label class="custom-file-label" for="customFile">
+                                <div>
+                                    <div class="upload-2"><img src="~/Content/Admin/images/User-Profile/upload.png" alt=""></div>
+                                    <div>
+                                        upload
+                                        a picture
+                                    </div>
+                                </div>
+                            </label>
+                            <span id="DefaultNotePicture-error" class="text-danger"></span>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.DefaultNotePicture, "", new { @class = "text-danger errormessage" })
+                    </div>
+                    <div class="form-group profile-picture-input last-row">
+                        <label>Default profile picture (if seller do not upload)</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" accept="image/jpg" id="DefaultUserPicture" name="DefaultUserPicture">
+
+                            <label class="custom-file-label" for="customFile">
+                                <div>
+                                    <div class="upload-2"><img src="~/Content/Admin/images/User-Profile/upload.png" alt=""></div>
+                                    <div>
+                                        upload
+                                        a picture
+                                    </div>
+                                </div>
+                            </label>
+                            <span id="DefaultUserPicture-error" class="text-danger"></span>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.DefaultUserPicture, "", new { @class = "text-danger errormessage" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button type="submit" class="btn-general btn-submit-form">
+                        submit
+                    </button>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
