@@ -1,0 +1,48 @@
+﻿@model NotesMarketPlace.Models.AddCategory
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="admin-profile">
+    <div class="container">
+        <div class="admin-heading">
+            <h3>
+                Edit Category
+            </h3>
+        </div>
+        <div class="admin-profile-details">
+            @using (Html.BeginForm("EditCategory/" + @Model.CategoryID, "Admin", FormMethod.Post))
+                    {
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="hidden" name="CategoryID" value="@Model.CategoryID">
+                        <label>Category Name *</label>
+                        @Html.TextBoxFor(x=>x.Name, new { @class = "form-control" ,@placeholder = "Enter Category",@value="@Model.Name" })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger errormessage" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">
+                            Description
+                            *
+                        </label>
+                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", rows = "5", @placeholder = "Description...",@value="@Model.Description" })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger errormessage error_field" })
+                        @*<textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Enter your description"></textarea>*@
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button class="btn-general btn-submit-form" type="submit">
+                        submit
+                    </button>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

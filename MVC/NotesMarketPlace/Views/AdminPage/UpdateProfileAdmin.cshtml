@@ -1,0 +1,88 @@
+﻿@model NotesMarketPlace.Models.UpdateProfileAdmin
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="admin-profile">
+    <div class="container">
+        <div class="admin-heading">
+            <h3>
+                My Profile
+            </h3>
+        </div>
+        <div class="admin-profile-details">
+            @using (Html.BeginForm("UpdateProfileAdmin", "Admin", FormMethod.Post, new {enctype = "multipart/form-data" }))
+                    {
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="hidden" id="exampleInput" name="UserID" value="@Model.UserID">
+                        <label>First Name *</label>
+                        @Html.TextBoxFor(x=>x.FirstName, new { @class = "form-control",@value="@Model.FirstName", @placeholder = "Enter Your FirstName" })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger errormessage" })
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name *</label>
+                        @Html.TextBoxFor(x=>x.LastName, new { @class = "form-control",@value="@Model.LastName", @placeholder = "Enter Your LastName"})
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger errormessage" })
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        @Html.TextBoxFor(x=>x.EmailID, new { @class = "form-control",@value="@Model.EmailID",@readonly="readonly" })
+                        @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger errormessage" })
+                    </div>
+                    <div class="form-group">
+                        <label>Secondary Email *</label>
+                        @Html.TextBoxFor(x=>x.SecondaryEmailAddress, new { @class = "form-control",@value="@Model.SecondaryEmailAddress", @placeholder = "Enter Your SecondaryEmailAddress" })
+                        @Html.ValidationMessageFor(model => model.SecondaryEmailAddress, "", new { @class = "text-danger errormessage" })
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3">
+                                @Html.DropDownList("PhoneNumberCountryCode",null, htmlAttributes: new { @class = "form-control", name="PhoneNumberCountryCode"})
+                                @Html.ValidationMessageFor(model => model.PhoneNumberCountryCode, "", new { @class = "text-danger errormessage" })
+
+                            </div>
+                            <div class="col-md-9 col-sm-9">
+                                @Html.TextBoxFor(x=>x.PhoneNumber, new {@value="@Model.PhoneNumber",@class = "form-control phone-number-input", @placeholder = "Enter Your Phone Number"})
+                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger errormessage" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group profile-picture-input last-row">
+                        <label>Profile Picture</label>
+                        @if(@ViewBag.ProfilePicture != null){
+                        <a href="/Admin/DownloadProfile/@Model.UserID">Uploaded Profile </a>
+                        }
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="ProfilePicture" name="ProfilePicture" onchange="return PPfileValidation()">
+                            @Html.ValidationMessageFor(model => model.ProfilePicture, "", new { @class = "text-danger" })
+                            <label class="custom-file-label" for="customFile">
+                                <div>
+                                    <div class="upload-2"><img src="~/Content/Admin/images/User-Profile/upload.png" alt=""></div>
+                                    <div>
+                                        upload
+                                        a picture
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button type="submit" class="btn-general btn-submit-form">
+                        Update
+                    </button>
+                </div>
+            </div>
+
+            }
+        </div>
+    </div>
+</div>

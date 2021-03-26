@@ -1,0 +1,298 @@
+﻿@model NotesMarketPlace.Models.AddNote
+
+<!-- Top Image With Text -->
+<div class="container-fluid p-0">
+    <div class="banner-img-text">
+        <h3 class="text-center">Add Notes</h3>
+    </div>
+</div>
+<!-- Form Area -->
+<div class="client-profile">
+
+    @using (Html.BeginForm("EditNote/"+ @Model.SellerNotesID, "Member", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+    <div class="container">
+        <!-- Basic Profile Detail -->
+        <div class="profile-detail-box">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h3>Basic Note Details</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Title *</label>
+                        <input type="hidden" name="SellerNotesID" value="@Model.SellerNotesID">
+                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Enter Your Note Title" ,@value="@Model.Title"})
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger errormessage  error_field" })
+                        @*<input type="text" class="form-control" id="exampleInputFirstName" aria-describedby="emailHelp" placeholder="Enter your notes title">*@
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">
+                            Category
+                            *
+                        </label>
+                        @Html.DropDownList("Category", null, htmlAttributes: new { @class = "form-control" })
+                        @*  @Html.DropDownList("Category", new SelectList(ViewBag.NotesCategory, "CategoryID", "Name"), "Select your category",new { id = "Category", name = "Category", @class = "form-control",@value="@ViewBag.Category" })*@
+                        @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger errormessage error_field" })
+                        <!-- <input class="form-control" placeholder="Select your category"> -->
+                        <!--<select class="form-control" id="exampleFormControlSelect1">
+        <option onmouseover="this.style.background='red'">Select your category</option>
+        <option>Category 1</option>
+        <option>Category 2</option>
+        <option>Category 3</option>
+        <option>Category 4</option>
+        <option>Category 5</option>
+    </select>-->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group profile-picture-input
+                                    last-row">
+                        <label>Display Picture</label>
+                        @if(@ViewBag.DP != null){
+                                <a href="/Member/DownloadPicture/@Model.SellerNotesID">Uploaded Picture </a>
+                        }
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="DisplayPicture" name="DisplayPicture" onchange="return fileValidation()">
+                            <label class="custom-file-label" for="customFile">
+                                <div>
+                                    <div class="upload-2"><img src="~/Content/images/User-Profile/upload.png" alt=""></div>
+                                    <div>
+                                        upload
+                                        a picture
+                                    </div>
+                                </div>
+                            </label>
+
+                            <span id="DisplayPicture-error" class="text-danger"></span>
+
+                            @if (@TempData["noticeimage"] != null)
+                {
+                            <h6 class="errormessage text-danger">@TempData["noticeimage"]</h6>
+                }
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group profile-picture-input
+                                    last-row">
+                        <label>Upload Notes *</label>
+                        @if(@ViewBag.AttechmentPath != null){
+                        <a href="/Member/AttechedFile/@Model.SellerNotesID">AttachedFiles </a>
+                        }
+                        <div class="custom-file">
+                            <input type="file" multiple="multiple" class="custom-file-input" id="UploadNotes" name="UploadNotes" onchange="return checkFileUploadExt(this);">
+                            @Html.ValidationMessageFor(model => model.UploadNotes, "", new { @class = "text-danger errormessage  error_field" })
+                            <label class="custom-file-label" for="customFile">
+                                <div>
+                                    <div class="upload-2">
+                                        <img src="~/Content/images/User-Profile/upload.png" alt="">
+                                    </div>
+                                    <div>
+                                        upload
+                                        a note
+                                    </div>
+                                </div>
+                            </label>
+                            <span id="UploadNotes-error" class="text-danger"></span>
+
+                            @if (@TempData["notice"] != null)
+                                    {
+                            <h6 class="errormessage text-danger">@TempData["notice"]</h6>
+                                    }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Type</label>
+                        @Html.DropDownList("NoteType", null, htmlAttributes: new { @class = "form-control" })
+                       @* @Html.DropDownList("NoteType", new SelectList(ViewBag.NotesType, "TypeID", "Name"), "Select your Country", new { id = "NoteType", name = "NoteType", @class = "form-control",@value="@ViewBag.NoteType" })*@
+                        @*<select class="form-control" id="exampleFormControlSelect1" placeholder="Select your category">
+            <option>Select your note type</option>
+            <option>Category 1</option>
+            <option>Category 2</option>
+            <option>Category 3</option>
+            <option>Category 4</option>
+            <option>Category 5</option>
+        </select>*@
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">
+                            Number of
+                            Pages
+                        </label>
+                        <input type="text" name="NumberOfPages" class="form-control" placeholder="Enter number of notepages" value="@Model.NumberOfPages">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">
+                                Description
+                                *
+                            </label>
+                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control", rows = "6", @placeholder = "Description...", @value="@Model.Description" })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger errormessage error_field" })
+
+                            @*                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Enter your Description"></textarea>*@
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="profile-detail-box">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h3>Institute Information</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="form-group">
+                        <label>Country</label>
+                        @Html.DropDownList("Country", null, htmlAttributes: new { @class = "form-control" })
+                      
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">
+                            Institute
+                            Name
+                        </label>
+                        <input type="text" class="form-control" name="UniversityName" placeholder="Enter your institute name" value="@Model.UniversityName">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-detail-box">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h3>Course Details</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Course Name</label>
+                        <input type="text" class="form-control" name="Course" placeholder="Enter your course name" value="@Model.Course">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Course Code</label>
+                        <input type="text" class="form-control" name="CourseCode" placeholder="Enter your course code" value="@Model.CourseCode">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">
+                            Professor /
+                            Lecturer
+                        </label>
+                        <input type="text" class="form-control" name="Professor" placeholder="Enter your professor name" value="@Model.Professor">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-detail-box">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h3>Selling Information</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="form-group">
+                        <label>Sell for *</label>
+                        <div class="input-group radio-input">
+                            @* <input type="radio" checked="checked" name="sell-for" class="checkmark">*@
+                            @Html.RadioButtonFor(m => m.IsPaid, "false")
+                            <label>
+                                Free
+                            </label>
+                            @Html.RadioButtonFor(m => m.IsPaid, "true")
+                            <label>
+                                Paid
+                            </label>
+                            @Html.ValidationMessageFor(model => model.IsPaid, "", new { @class = "text-danger errormessage error_field" })
+                            @*                                <label for="gridCheck">
+                                    Free
+                                </label>
+                                <input type="radio" name="sell-for">
+                                <label for="gridCheck">
+                                    Paid
+                                </label>*@
+                        </div>
+                    </div>
+                    <div class="form-group price">
+                        <label>Sell Price *</label>
+                        @Html.TextBoxFor(x => x.SellingPrice, new {@id="SellingPrice", @class = "form-control", @placeholder = "Enter Your Price",@value="@Model.SellingPrice" })
+                        @*<input type="text" class="form-control" placeholder="Enter your price">*@
+
+                        @if (@TempData["noticePrice"] != null)
+                                    {
+                        <h6 class="errormessage text-danger">@TempData["noticePrice"]</h6>
+                                    }
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="form-group profile-picture-input
+                                    last-row">
+                        <label>Note Preview</label>
+                        @if(@ViewBag.NotePriview != null){
+                        <a href="/Member/DownloadPreview/@Model.SellerNotesID">Uploaded Preview </a>
+                        }
+                        
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="NotePreview" name="NotePreview" onchange="return fileValidationPreview()">
+                            <label class="custom-file-label" for="customFile">
+                                <div>
+                                    <div class="upload-2"><img src="~/Content/images/User-Profile/upload.png" alt=""></div>
+                                    <div>
+                                        upload
+                                        a image
+                                    </div>
+                                </div>
+                            </label>
+                            <span id="NotesPreview-error" class="text-danger"></span>
+                            @if (@TempData["noticePreview"] != null)
+                                    {
+                            <h6 class="errormessage text-danger">@TempData["noticePreview"]</h6>
+                                    }
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <button type="submit" name="submit" value="Save" class="btn-general btn-submit-form
+                                mr-3">
+                    save
+                </button>
+                <button type="submit" name="submit" value="Publish" class="btn-general btn-submit-form">publish</button>
+            </div>
+        </div>
+    </div>
+        }
+
+</div>

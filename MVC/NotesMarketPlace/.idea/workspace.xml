@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="285bcf44-d900-4ce7-a833-2bd4370f32a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.vs/NotesMarketPlace/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/NotesMarketPlace/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AdminMemberDetailsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AdminMemberDetailsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/HomePageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/HomePageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/PublishedNotesAdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/PublishedNotesAdminController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/AdminDashboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/AdminDashboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotesMarketPlace.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NotesMarketPlace.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/AdminPage/Dashboard.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/AdminPage/Dashboard.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/HomePage/NoteDetails.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/HomePage/NoteDetails.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Member/MyDownloads.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Member/MyDownloads.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/PublishedNotesAdmin/PublishedNotes.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/PublishedNotesAdmin/PublishedNotes.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/_AdminLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_AdminLayout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/NotesMarketPlace.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/NotesMarketPlace.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/NotesMarketPlace.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/NotesMarketPlace.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NotesMarketPlace.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NotesMarketPlace.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NotesMarketPlace.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NotesMarketPlace.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NotesMarketPlace.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NotesMarketPlace.pdb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1p6NswM0dyKL27wId26yLKIUGpY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="285bcf44-d900-4ce7-a833-2bd4370f32a0" name="Default Changelist" comment="" />
+      <created>1614499794869</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614499794869</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1614523727774">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1614523727774" />
+  </component>
+</project>
