@@ -545,10 +545,8 @@ namespace NotesMarketPlace.Controllers
                     fileName = "Attachement" + Count + "_" + DateTime.Now.ToString("ddMMyyyy") + extension;
                     string finalpath = Path.Combine(attachementsstorepath, fileName);
                     file.SaveAs(finalpath);
-
                     FileName += fileName + ";";
                     FilePath += Path.Combine(("/Members/" + userObj.UserID + "/" + noteID + "/Attachements/"), fileName) + ";";
-
                     Count++;
                 }
 
@@ -779,8 +777,10 @@ namespace NotesMarketPlace.Controllers
                 int Count = 1;
                 var FilePath = "";
                 var FileName = "";
+                long FileSize = 0;
                 foreach (var file in objAddNote.UploadNotes)
                 {
+                    FileSize += ((file.ContentLength) / 1024);
                     string fileName = Path.GetFileNameWithoutExtension(file.FileName);
                     string extension = Path.GetExtension(file.FileName);
                     fileName = "Attachement" + Count + "_" + DateTime.Now.ToString("ddMMyyyy") + extension;
