@@ -792,7 +792,7 @@ namespace NotesMarketPlace.Controllers
 
                     Count++;
                 }
-
+                sellerNotesAttachement.AttachmentSize = FileSize;
                 sellerNotesAttachement.FilePath = FilePath;
                 sellerNotesAttachement.FileName = FileName;
                 objMember.Entry(sellerNotesAttachement).State = EntityState.Modified;
